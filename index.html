@@ -72,9 +72,10 @@
             width: 100%;
             margin: 45px 0;
             overflow: hidden;
-            background-color: #0f0f0f;
+            background-color: #141414; /* Colore di segnaposto scuro e minimale */
         }
 
+        /* L'effetto sfumato morbido (vignette) viene mantenuto sovrapponendo una sfumatura inset che sfuma verso lo sfondo scuro #0f0f0f */
         .vignette-wrapper::after {
             content: '';
             position: absolute;
@@ -86,15 +87,10 @@
             pointer-events: none;
         }
 
-        .vignette-wrapper img {
-            display: block;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            filter: grayscale(20%) brightness(75%) contrast(110%);
-        }
+        /* Stili precedentemente applicati alle img rimossi */
 
-        .vignette-wrapper.banner img {
+        /* Altezza specifica spostata sul wrapper banner */
+        .vignette-wrapper.banner {
             height: 440px;
         }
 
@@ -107,10 +103,7 @@
 
         .gallery-grid .vignette-wrapper {
             margin: 0;
-        }
-
-        .gallery-grid .vignette-wrapper img {
-            height: 420px;
+            height: 420px; /* Altezza specifica spostata sui wrapper galleria */
         }
 
         .hero {
@@ -442,7 +435,8 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            .vignette-wrapper img, .vignette-wrapper.banner img { height: 260px; }
+            .vignette-wrapper.banner { height: 260px; }
+            .gallery-grid .vignette-wrapper { height: 260px; }
             .cta-group {
                 flex-direction: column;
                 align-items: flex-start;
@@ -469,8 +463,7 @@
         </div>
 
         <div class="vignette-wrapper banner">
-            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="BasicBlonde Boutique Atelier Studio Interior">
-        </div>
+            </div>
 
         <div class="section" style="border-top: none; padding-top: 20px;">
             <h2 class="section-title">il rigore del tratto</h2>
@@ -503,11 +496,9 @@
 
         <div class="gallery-grid">
             <div class="vignette-wrapper">
-                <img src="https://images.unsplash.com/photo-1590246814883-57c511e76523?auto=format&fit=crop&w=800&q=80" alt="Fine Line Tattoo Aesthetic Detail">
-            </div>
+                </div>
             <div class="vignette-wrapper">
-                <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=800&q=80" alt="Elegant Minimalist Tattoo Inspiration">
-            </div>
+                </div>
         </div>
 
         <div id="valutazione" class="lead-magnet">
@@ -576,7 +567,7 @@
             <p><strong>titolarità del sito:</strong> il presente sito web è gestito da basicblonde studio, con sede a brescia centro. i servizi offerti sono limitati a prestazioni di dermo-pigmentazione estetica ed artistica eseguite in regime di appuntamento privato ed esclusivo mono-cliente 1-to-1.</p>
             <p><strong>proprietà intellettuale:</strong> tutti i contenuti testuali, l'architettura del codice, le grafiche e i marchi registrati o di fatto presenti su questo sito sono di proprietà exclusiva di basicblonde studio. è vietata qualsiasi riproduzione, anche parziale, senza esplicito consenso scritto.</p>
             <p><strong>disclaimer tecnico-informativo:</strong> i contenuti del "report tecnico sulla guarigione molecolare del tratto fine-line" e le informazioni generali diffuse sul sito hanno carattere puramente informativo, artistico ed estetico. non costituiscono in alcun modo parere medico, dermatologico o sanitario. l'esecuzione di trattamenti di dermo-pigmentazione avviene nel totale rispetto dei protocolli igienico-sanitari vigenti, ma l'evoluzione biologica del pigmento nel tempo può variare in base al tipo di cute e ai fattori endogeni del soggetto.</p>
-            <p><strong>trattamento dati (gdpr):</strong> i dati personali raccolti tramite i moduli d'invio (nome, indirizzo email, recapito telefonico) sono trattati in piena conformità con il regolamento europeo gdpr. tali dati vengono utilizzati esclusivamente per l'invio della documentazione tecnica richiesta o per la gestione logistica della prenotazione della consulenza e non saranno in alcun caso ceduti, venduti o distribuiti a soggetti terzi.</p>
+            <p><strong>trattamento dati (gdpr):</strong> i dati personali raccolti tramite i moduli d'invio (nome, indirizzo email, recapito telefonico) sono trattati in piena conformità con il regolamento europeo gdpr. tali dati vengono utilizzati esclusivamente per l'invio della documentazione tecnica richiesta o per la gestione logistica della prenotazione della consulenza e non saranno in alcun caso ceduti, venduti o distribuuiti a soggetti terzi.</p>
         </div>
     </div>
 

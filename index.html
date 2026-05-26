@@ -66,46 +66,6 @@
             padding: 30px 0;
         }
 
-        /* --- CONTENITORE CON EFFETTO SFUMATO SUI BORDI (VIGNETTE) --- */
-        .vignette-wrapper {
-            position: relative;
-            width: 100%;
-            margin: 45px 0;
-            overflow: hidden;
-            background-color: #141414; /* Colore di segnaposto scuro e minimale */
-        }
-
-        /* L'effetto sfumato morbido (vignette) viene mantenuto sovrapponendo una sfumatura inset che sfuma verso lo sfondo scuro #0f0f0f */
-        .vignette-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            box-shadow: inset 0 0 45px 35px #0f0f0f;
-            pointer-events: none;
-        }
-
-        /* Stili precedentemente applicati alle img rimossi */
-
-        /* Altezza specifica spostata sul wrapper banner */
-        .vignette-wrapper.banner {
-            height: 440px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin: 45px 0;
-        }
-
-        .gallery-grid .vignette-wrapper {
-            margin: 0;
-            height: 420px; /* Altezza specifica spostata sui wrapper galleria */
-        }
-
         .hero {
             padding: 80px 50px;
             background-color: #141414;
@@ -193,7 +153,7 @@
         }
 
         .section {
-            padding: 60px 0 90px 0;
+            padding: 60px 0 40px 0;
         }
 
         .section-title {
@@ -431,12 +391,10 @@
         @media (max-width: 768px) {
             .headline { font-size: 26pt; }
             .hero { padding: 40px 25px; }
-            .benefits-grid, .contact-grid, .gallery-grid {
+            .benefits-grid, .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            .vignette-wrapper.banner { height: 260px; }
-            .gallery-grid .vignette-wrapper { height: 260px; }
             .cta-group {
                 flex-direction: column;
                 align-items: flex-start;
@@ -462,10 +420,7 @@
             </div>
         </div>
 
-        <div class="vignette-wrapper banner">
-            </div>
-
-        <div class="section" style="border-top: none; padding-top: 20px;">
+        <div class="section">
             <h2 class="section-title">il rigore del tratto</h2>
             <div class="benefits-grid">
                 
@@ -492,13 +447,6 @@
 
         <div class="editorial-callout">
             &ldquo;Disegniamo l'invisibile con l'eleganza di un dettaglio che non ha bisogno di gridare per farsi notare.&rdquo;
-        </div>
-
-        <div class="gallery-grid">
-            <div class="vignette-wrapper">
-                </div>
-            <div class="vignette-wrapper">
-                </div>
         </div>
 
         <div id="valutazione" class="lead-magnet">
@@ -567,7 +515,7 @@
             <p><strong>titolarità del sito:</strong> il presente sito web è gestito da basicblonde studio, con sede a brescia centro. i servizi offerti sono limitati a prestazioni di dermo-pigmentazione estetica ed artistica eseguite in regime di appuntamento privato ed esclusivo mono-cliente 1-to-1.</p>
             <p><strong>proprietà intellettuale:</strong> tutti i contenuti testuali, l'architettura del codice, le grafiche e i marchi registrati o di fatto presenti su questo sito sono di proprietà exclusiva di basicblonde studio. è vietata qualsiasi riproduzione, anche parziale, senza esplicito consenso scritto.</p>
             <p><strong>disclaimer tecnico-informativo:</strong> i contenuti del "report tecnico sulla guarigione molecolare del tratto fine-line" e le informazioni generali diffuse sul sito hanno carattere puramente informativo, artistico ed estetico. non costituiscono in alcun modo parere medico, dermatologico o sanitario. l'esecuzione di trattamenti di dermo-pigmentazione avviene nel totale rispetto dei protocolli igienico-sanitari vigenti, ma l'evoluzione biologica del pigmento nel tempo può variare in base al tipo di cute e ai fattori endogeni del soggetto.</p>
-            <p><strong>trattamento dati (gdpr):</strong> i dati personali raccolti tramite i moduli d'invio (nome, indirizzo email, recapito telefonico) sono trattati in piena conformità con il regolamento europeo gdpr. tali dati vengono utilizzati esclusivamente per l'invio della documentazione tecnica richiesta o per la gestione logistica della prenotazione della consulenza e non saranno in alcun caso ceduti, venduti o distribuuiti a soggetti terzi.</p>
+            <p><strong>trattamento dati (gdpr):</strong> i dati personali raccolti tramite i moduli d'invio (nome, indirizzo email, recapito telefonico) sono trattati in piena conformità con il regolamento europeo gdpr. tali dati vengono utilizzati esclusivamente per l'invio della documentazione tecnica richiesta o per la gestione logistica della prenotazione della consulenza e non saranno in alcun caso ceduti, venduti o distribuiti a soggetti terzi.</p>
         </div>
     </div>
 

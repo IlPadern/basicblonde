@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basicblonde — fine-line boutique atelier</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            text-transform: lowercase;
+            letter-spacing: -0.02em;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* --- hero section --- */
+        .hero {
+            padding: 80px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .brand-name {
+            font-size: 10pt;
+            letter-spacing: 0.2em;
+            color: #c5a075;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .headline {
+            font-size: 28pt;
+            font-weight: 400;
+            line-height: 1.2;
+            color: #ffffff;
+            margin: 0 0 25px 0;
+            max-width: 90%;
+        }
+
+        .subtitle {
+            font-size: 11pt;
+            color: #a0a0a0;
+            max-width: 80%;
+            margin: 0 0 40px 0;
+            font-weight: 300;
+        }
+
+        /* --- cta e bottoni --- */
+        .cta-group {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #c5a075;
+            color: #121212;
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 10pt;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #c5a075;
+            border: 1px solid #c5a075;
+            margin-left: 15px;
+        }
+
+        /* --- sezione vantaggi --- */
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #c5a075;
+            margin-bottom: 40px;
+            letter-spacing: 0.05em;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .benefit-card h3 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0 0 12px 0;
+        }
+
+        .benefit-card p {
+            font-size: 9.5pt;
+            color: #a0a0a0;
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* --- form stili comuni --- */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 9pt;
+            color: #a0a0a0;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            background-color: #1a1a1a;
+            border: 1px solid #333333;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 10pt;
+            text-transform: lowercase;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #c5a075;
+        }
+
+        /* --- lead magnet (report tecnico) centrato e distanziato perfettamente --- */
+        .lead-magnet {
+            background-color: #1a1a1a;
+            border-top: 1px solid #c5a075;
+            border-bottom: 1px solid #c5a075;
+            padding: 60px 40px;
+            margin: 110px 0; /* Maggiore distacco verticale per non lasciarlo troppo in alto */
+            text-align: center; /* Centratura totale del testo */
+        }
+
+        .lead-magnet h3 {
+            font-size: 13pt;
+            color: #ffffff;
+            margin: 0 auto 15px auto;
+            font-weight: 600;
+        }
+
+        .lead-magnet p {
+            font-size: 9.5pt;
+            color: #a0a0a0;
+            margin: 0 auto 35px auto;
+            max-width: 85%;
+        }
+
+        .inline-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center; /* Centra gli elementi del form orizzontalmente */
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .inline-form .form-control {
+            flex: 1;
+            background-color: #222222;
+        }
+
+        /* --- sezione prenotazione dedicata --- */
+        .booking-section {
+            padding: 80px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        /* --- schermata a sé per note legali (fullscreen overlay) --- */
+        .legal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #121212;
+            z-index: 9999;
+            overflow-y: auto;
+            padding: 60px 20px;
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #888888;
+            font-size: 8.5pt;
+        }
+
+        .legal-content h2 {
+            font-size: 11pt;
+            color: #ffffff;
+            margin: 0 0 30px 0;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .legal-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .btn-close-legal {
+            display: inline-block;
+            color: #c5a075;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 9.5pt;
+            margin-bottom: 40px;
+            cursor: pointer;
+            border-bottom: 1px dashed #c5a075;
+            padding-bottom: 2px;
+        }
+
+        /* --- contatti e link esterni --- */
+        .footer {
+            padding: 60px 0 20px 0;
+            font-size: 9.5pt;
+            color: #666666;
+        }
+
+        .contact-title {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 6px 0;
+        }
+
+        .external-links {
+            margin-top: 40px;
+        }
+
+        .external-links a {
+            color: #c5a075;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .external-links a:hover {
+            border-bottom: 1px solid #c5a075;
+        }
+
+        /* --- responsive --- */
+        @media (max-width: 768px) {
+            .headline { font-size: 22pt; }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .btn {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            .btn-secondary {
+                margin-left: 0;
+            }
+            .inline-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- hero section -->
+        <div class="hero">
+            <div class="brand-name">basicblonde</div>
+            <h1 class="headline">il silenzio è il massimo livello di sofisticazione.</h1>
+            <p class="subtitle">boutique atelier fine-line a brescia centro. frammenti d’identità puri, protetti dal tempo e ingegnerizzati attraverso la dermo-pigmentazione molecolare.</p>
+            
+            <div class="cta-group">
+                <a href="#prenota" class="btn">blocca la consulenza privata</a>
+                <a href="#valutazione" class="btn btn-secondary">richiedi valutazione tecnica</a>
+            </div>
+        </div>
+
+        <!-- sezione vantaggi -->
+        <div class="section">
+            <div class="section-title">il rigore del tratto</div>
+            <div class="benefits-grid">
+                
+                <div class="benefit-card">
+                    <h3>protocollo healed authority</h3>
+                    <p>la scienza del pigmento applicata alla dermo-pigmentazione chirurgica. garantiamo stabilità molecolare: linee sottili che non si espandono e non sbiadiscono negli anni.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>esperienza boutique 1-to-1</h3>
+                    <p>totale isolamento acustico ed estetico dal caos esterno. l'atelier riceve esclusivamente una cliente alla volta per sessioni private focalizzate sul comfort e sulla riservatezza.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>simbiosi anatomica</h3>
+                    <p>progettazione botanica e minimalista eseguita su misura. ogni disegno segue le linee naturali del corpo per agire come un gioiello invisibile sotto un abito sartoriale.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- lead magnet section (ora centrato e con ampi margini) -->
+        <div id="valutazione" class="lead-magnet">
+            <h3>note riservate sulla guarigione del tratto fine-line</h3>
+            <p>abbiamo digitalizzato un report tecnico esclusivo che illustra i fattori molecolari, biologici e di posizionamento che determinano la longevità di un tatuaggio microscopico nel tempo.</p>
+            
+            <form action="#" method="POST" class="inline-form" onsubmit="alert('grazie. il report tecnico è in viaggio verso la tua email.'); return false;">
+                <input type="email" class="form-control" placeholder="inserisci la tua migliore email" required>
+                <button type="submit" class="btn">ricevi il report tecnico</button>
+            </form>
+        </div>
+
+        <!-- sezione prenotazione dedicata -->
+        <div id="prenota" class="booking-section">
+            <div class="section-title">richiesta di accesso all'atelier</div>
+            <p style="color: #a0a0a0; font-size: 10pt; margin-bottom: 30px; max-width: 80%;">compila i dettagli sottostanti. le sessioni private vengono calibrate sulle linee anatomiche individuali e confermate solo previa valutazione di fattibilità tecnica.</p>
+            
+            <form action="#" method="POST" onsubmit="alert('richiesta inviata. verrai ricontattata privatamente su whatsapp o email entro 24 ore.'); return false;">
+                <div class="form-group">
+                    <label class="form-label">nome completo / alias</label>
+                    <input type="text" class="form-control" placeholder="es. elena..." required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">contatto email o whatsapp</label>
+                    <input type="text" class="form-control" placeholder="es. nome@email.com o telefono" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">idea del progetto (posizionamento o ispirazione botanica)</label>
+                    <textarea class="form-control" rows="4" placeholder="descrivi brevemente la tua visione..." style="resize: none; font-family: 'Inter', sans-serif;"></textarea>
+                </div>
+                <button type="submit" class="btn" style="margin-top: 10px;">invia richiesta privata</button>
+            </form>
+        </div>
+
+        <!-- contatti e link esterni -->
+        <div class="footer">
+            <div class="contact-title">basicblonde studio</div>
+            <div class="contact-info">
+                <p>brescia centro — solo su appuntamento privato</p>
+                <p>disponibilità limitata per sessioni executive mensili</p>
+                <p>email: info@basicblonde.it</p>
+            </div>
+            <div class="external-links">
+                <a href="https://www.instagram.com/basicblonde.tattoo?igsh=MXE4dzZqdmpydDhycg==" target="_blank">instagram portfolio</a>
+                <a href="javascript:void(0);" onclick="openLegal()">note legali</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- schermata note legali (nascosta di default, copre l'intero schermo all'attivazione) -->
+    <div id="legal-overlay" class="legal-overlay">
+        <div class="legal-content">
+            <div class="btn-close-legal" onclick="closeLegal()">← torna alla pagina principale</div>
+            
+            <h2>note legali & privacy disclaimer</h2>
+            <p><strong>titolarità del sito:</strong> il presente sito web è gestito da basicblonde studio, con sede a brescia centro. i servizi offerti sono limitati a prestazioni di dermo-pigmentazione estetica ed artistica eseguite in regime di appuntamento privato ed esclusivo mono-cliente 1-to-1.</p>
+            <p><strong>proprietà intellettuale:</strong> tutti i contenuti testuali, l'architettura del codice, le grafiche e i marchi registrati o di fatto presenti su questo sito sono di proprietà exclusivb di basicblonde studio. è vietata qualsiasi riproduzione, anche parziale, senza esplicito consenso scritto.</p>
+            <p><strong>disclaimer tecnico-informativo:</strong> i contenuti del "report tecnico sulla guarigione molecolare del tratto fine-line" e le informazioni generali diffuse sul sito hanno carattere puramente informativo, artistico ed estetico. non costituiscono in alcun modo parere medico, dermatologico o sanitario. l'esecuzione di trattamenti di dermo-pigmentazione avviene nel totale rispetto dei protocolli igienico-sanitari vigenti, ma l'evoluzione biologica del pigmento nel tempo può variare in base al tipo di cute e ai fattori endogeni del soggetto.</p>
+            <p><strong>trattamento dati (gdpr):</strong> i dati personali raccolti tramite i moduli d'invio (nome, indirizzo email, recapito telefonico) sono trattati in piena conformità con il regolamento europeo gdpr. tali dati vengono utilizzati esclusivamente per l'invio della documentazione tecnica richiesta o per la gestione logistica della prenotazione della consulenza e non saranno in alcun caso ceduti, venduti o distribuiti a soggetti terzi.</p>
+        </div>
+    </div>
+
+    <script>
+        function openLegal() {
+            document.getElementById('legal-overlay').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // disabilita lo scroll della pagina principale
+        }
+
+        function closeLegal() {
+            document.getElementById('legal-overlay').style.display = 'none';
+            document.body.style.overflow = 'auto'; // ripristina lo scroll
+        }
+    </script>
+
+</body>
+</html>

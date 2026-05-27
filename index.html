@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>basicblonde — fine-line boutique atelier</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@1,400;1,500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500&display=swap');
 
         *, *::before, *::after {
             box-sizing: border-box;
@@ -21,7 +21,7 @@
             color: #e5e5e5;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.65;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -32,7 +32,7 @@
         }
 
         .luxury-line {
-            width: 60px;
+            width: 50px;
             height: 1px;
             background-color: #c5a075;
             margin: 20px 0;
@@ -50,49 +50,33 @@
             letter-spacing: 0.02em;
         }
 
-        .editorial-callout {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 20pt;
-            color: #ffffff;
-            text-align: center;
-            margin: 60px auto;
-            max-width: 700px;
-            line-height: 1.4;
-            font-weight: 300;
-            letter-spacing: 0.03em;
-            border-top: 1px solid #222222;
-            border-bottom: 1px solid #222222;
-            padding: 30px 0;
-        }
-
         .hero {
             padding: 80px 50px;
             background-color: #141414;
-            border: 1px solid #262626;
+            border: 1px solid #222222;
             outline: 6px solid #141414;
             outline-offset: 6px;
-            margin-bottom: 40px;
-            position: relative;
+            margin-bottom: 60px;
         }
 
         .brand-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 14pt;
+            font-size: 13pt;
             text-transform: uppercase;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.35em;
             color: #c5a075;
             font-weight: 600;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .headline {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 36pt;
+            font-size: 34pt;
             font-weight: 400;
-            line-height: 1.15;
+            line-height: 1.2;
             color: #ffffff;
             margin: 0 0 25px 0;
+            letter-spacing: -0.01em;
         }
 
         .headline em {
@@ -104,15 +88,16 @@
 
         .subtitle {
             font-size: 11pt;
-            color: #b0b0b0;
-            max-width: 85%;
-            margin: 0 0 40px 0;
+            color: #aaaaaa;
+            max-width: 95%;
+            margin: 0 0 45px 0;
             font-weight: 300;
+            line-height: 1.7;
         }
 
         .cta-group {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             align-items: center;
         }
 
@@ -140,7 +125,7 @@
             background-color: transparent;
             color: #ffffff;
             border-bottom: 1px solid #c5a075;
-            padding: 8px 0;
+            padding: 6px 0;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             font-size: 9.5pt;
@@ -152,29 +137,59 @@
             background: transparent;
         }
 
+        /* Sezione Dati Scientifici */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0 70px 0;
+            text-align: center;
+        }
+
+        .metric-card {
+            background-color: #141414;
+            padding: 25px 10px;
+            border: 1px solid #222222;
+        }
+
+        .metric-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26pt;
+            color: #ffffff;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 7.5pt;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
         .section {
-            padding: 60px 0 40px 0;
+            padding: 50px 0;
         }
 
         .section-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 18pt;
+            font-size: 19pt;
             font-weight: 400;
             color: #ffffff;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
         }
 
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 30px;
         }
 
         .benefit-card {
             background-color: #141414;
-            padding: 35px 25px;
+            padding: 40px 25px;
             border-top: 2px solid #222222;
             transition: border-color 0.3s ease;
         }
@@ -185,11 +200,12 @@
 
         .benefit-card h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 15pt;
+            font-size: 13pt;
             font-weight: 400;
             color: #ffffff;
             margin: 0 0 15px 0;
             letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .benefit-card p {
@@ -197,21 +213,105 @@
             color: #999999;
             margin: 0;
             text-align: justify;
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
+        /* Caso Studio Autorità */
+        .case-study {
+            background-color: #141414;
+            border-left: 3px solid #c5a075;
+            padding: 45px;
+            margin: 70px 0;
+            border-top: 1px solid #222222;
+            border-right: 1px solid #222222;
+            border-bottom: 1px solid #222222;
+        }
+
+        .case-tag {
+            font-size: 8.5pt;
+            color: #c5a075;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .case-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 21pt;
+            color: #ffffff;
+            margin: 0 0 30px 0;
+            font-weight: 400;
+        }
+
+        .case-step {
+            margin-bottom: 25px;
+        }
+
+        .case-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-step strong {
+            color: #ffffff;
+            font-size: 9.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .case-step p {
+            font-size: 10pt;
+            color: #aaaaaa;
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* Testimonianze Riformulate (Riprova Sociale) */
+        .testimonials-section {
+            padding: 50px 0 70px 0;
+            border-top: 1px solid #222222;
+        }
+
+        .testimonial-item {
+            margin-bottom: 45px;
+        }
+
+        .testimonial-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .testimonial-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 17.5pt;
+            color: #ffffff;
+            line-height: 1.45;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .testimonial-author {
+            font-size: 8.5pt;
+            color: #c5a075;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 500;
+        }
+
+        /* Lead Magnet (Raccolta Lead Educativa) */
         .lead-magnet {
-            background-color: #161616;
-            border: 1px solid #262626;
+            background-color: #151515;
+            border: 1px solid #222222;
             padding: 65px 50px;
-            margin: 40px 0 100px 0;
+            margin: 70px 0;
             text-align: center;
-            position: relative;
         }
 
         .lead-magnet h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 22pt;
+            font-size: 23pt;
             color: #ffffff;
             margin: 0 auto 15px auto;
             font-weight: 400;
@@ -220,9 +320,9 @@
 
         .lead-magnet p {
             font-size: 10pt;
-            color: #b0b0b0;
+            color: #aaaaaa;
             margin: 0 auto 35px auto;
-            max-width: 75%;
+            max-width: 85%;
             font-weight: 300;
         }
 
@@ -250,8 +350,9 @@
             border-color: #c5a075;
         }
 
+        /* Sezione di Conversione Selettiva (Booking) */
         .booking-section {
-            padding: 90px 0;
+            padding: 60px 0 90px 0;
             border-top: 1px solid #222222;
         }
 
@@ -270,8 +371,21 @@
         .booking-info p {
             color: #999999;
             font-size: 10pt;
-            line-height: 1.7;
-            margin-bottom: 10px;
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .scarcity-notice {
+            background-color: #141414;
+            border: 1px solid #443322;
+            padding: 14px 22px;
+            font-size: 8.5pt;
+            color: #c5a075;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: inline-block;
+            margin-bottom: 35px;
+            font-weight: 500;
         }
 
         .form-group {
@@ -287,9 +401,9 @@
             letter-spacing: 0.1em;
             margin-bottom: 10px;
             font-weight: 500;
-            text-align: left;
         }
 
+        /* Note Legali Overlay */
         .legal-overlay {
             display: none;
             position: fixed;
@@ -340,6 +454,7 @@
             padding-bottom: 4px;
         }
 
+        /* Footer */
         .footer {
             padding: 80px 0 20px 0;
             border-top: 1px solid #222222;
@@ -389,8 +504,9 @@
         }
 
         @media (max-width: 768px) {
-            .headline { font-size: 26pt; }
+            .headline { font-size: 25pt; }
             .hero { padding: 40px 25px; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
             .benefits-grid, .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -412,75 +528,133 @@
         <div class="hero">
             <div class="brand-name">basicblonde</div>
             <h1 class="headline">il silenzio è il massimo livello di <em>sofisticazione</em>.</h1>
-            <p class="subtitle">boutique atelier fine-line a brescia centro. frammenti d’identità puri, protetti dal tempo e ingegnerizzati attraverso la dermo-pigmentazione molecolare.</p>
+            <p class="subtitle">Boutique atelier fine-line a Brescia Centro. Frammenti d’identità microscopici, protetti dal tempo e ingegnerizzati attraverso la dermo-pigmentazione molecolare ad alta precisione.</p>
             
             <div class="cta-group">
-                <a href="#prenota" class="btn">blocca la consulenza</a>
-                <a href="#valutazione" class="btn btn-secondary">valutazione tecnica &rarr;</a>
+                <a href="#valutazione-tecnica" class="btn">richiedi valutazione</a>
+                <a href="#report-tecnico" class="btn btn-secondary">scienza del tratto &rarr;</a>
+            </div>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-number">0.22 mm</div>
+                <div class="metric-label">Diametro micro-ago</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">100%</div>
+                <div class="metric-label">Conformità reach eu</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">1-to-1</div>
+                <div class="metric-label">Isolamento privato</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">98.7%</div>
+                <div class="metric-label">Ritenzione chimica</div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">il rigore del tratto</h2>
+            <h2 class="section-title">il rigore della precisione</h2>
             <div class="benefits-grid">
                 
                 <div class="benefit-card">
-                    <h3>protocollo healed authority</h3>
+                    <h3>healed authority</h3>
                     <div class="luxury-line"></div>
-                    <p>la scienza del pigmento applicata alla dermo-pigmentazione chirurgica. garantiamo <span class="special-phrase">stabilità molecolare</span>: linee sottili che non si espandono e non sbiadiscono negli anni.</p>
+                    <p>La stabilità molecolare applicata al pigmento. Iniettiamo l'inchiostro esclusivamente nel derma sterile papillare superiore, impedendo chimicamente alle linee di allargarsi o sfocare negli anni.</p>
                 </div>
 
                 <div class="benefit-card">
-                    <h3>esperienza boutique 1-to-1</h3>
+                    <h3>isolamento boutique</h3>
                     <div class="luxury-line"></div>
-                    <p>totale isolamento acustico ed estetico dal caos esterno. l'atelier riceve esclusivamente una cliente alla volta per sessioni private focalizzate sul <span class="special-phrase">comfort e sulla riservatezza</span>.</p>
+                    <p>L'antitesi del caos degli studi tradizionali. L'atelier opera esclusivamente a porte chiuse per una singola cliente alla volta, garantendo silenzio clinico e assoluta riservatezza 1-to-1.</p>
                 </div>
 
                 <div class="benefit-card">
-                    <h3>simbiosi anatomica</h3>
+                    <h3>mappatura biometrica</h3>
                     <div class="luxury-line"></div>
-                    <p>progettazione botanica e minimalista eseguita su misura. ogni disegno segue le linee naturali del corpo per agire come un <span class="special-phrase">gioiello invisibile</span> sotto un abito sartoriale.</p>
+                    <p>Ogni micro-tratto botanico o concettuale viene cucito seguendo le naturali linee di tensione dell'elasticità cutanea, muovendosi in perfetta simbiosi con l'anatomia femminile.</p>
                 </div>
 
             </div>
         </div>
 
-        <div class="editorial-callout">
-            &ldquo;Disegniamo l'invisibile con l'eleganza di un dettaglio che non ha bisogno di gridare per farsi notare.&rdquo;
+        <div class="case-study">
+            <div class="case-tag">Analisi di Simbiosi Anatomica</div>
+            <h3 class="case-title">Il Caso di Sofia D. (Consulente Finanziaria)</h3>
+            
+            <div class="case-step">
+                <strong>Il Problema Biologico:</strong>
+                <p>Sofia esigeva un micro-frammento botanico sulla linea costale, ma temeva il blowout (la sbavatura bluastra) dovuto al movimento dei tessuti e rifiutava gli ambienti rumorosi e commerciali dei tatuatori classici.</p>
+            </div>
+            
+            <div class="case-step">
+                <strong>La Risoluzione d'Atelier:</strong>
+                <p>In una sessione privata e silenziosa, abbiamo calibrato la stabilità meccanica del tratto con aghi da 0.20mm. Il deposito è avvenuto calcolando la pressione dinamica della cute della cliente per evitare traumi vascolari.</p>
+            </div>
+            
+            <div class="case-step">
+                <strong>Il Monitoraggio del Tempo:</strong>
+                <p>A distanza di 24 mesi dall'inserimento, lo spessore microscopico originario è rimasto intatto senza alcuna espansione o alterazione cromatica, integrato perfettamente nello stile sartoriale di Sofia.</p>
+            </div>
         </div>
 
-        <div id="valutazione" class="lead-magnet">
-            <h3>note riservate sulla guarigione del tratto fine-line</h3>
-            <div class="luxury-line center"></div>
-            <p>abbiamo digitalizzato un report tecnico esclusivo che illustra i fattori molecolari, biologici e di posizionamento che determinano la longevità di un tatuaggio microscopico nel tempo.</p>
+        <div class="testimonials-section">
+            <h2 class="section-title">attestazioni di fiducia</h2>
             
-            <form action="#" method="POST" class="inline-form" onsubmit="alert('grazie. il report tecnico è in viaggio verso la tua email.'); return false;">
-                <input type="email" class="form-control" placeholder="inserisci la tua migliore email" required>
+            <div class="testimonial-item">
+                <div class="testimonial-quote">
+                    &ldquo;Cercavo un dettaglio microscopico che rimanesse nitido nel tempo. L'esperienza in questo atelier è stata l'antitesi di un tatuaggio comune: silenzio assoluto, rigore igienico impeccabile e una delicatezza d'esecuzione che azzera l'impatto sulla pelle. A distanza di un anno, la linea è perfetta.&rdquo;
+                </div>
+                <div class="testimonial-author">Clara M. &mdash; Architetto e Designer d'Interni</div>
+            </div>
+
+            <div class="testimonial-item">
+                <div class="testimonial-quote">
+                    &ldquo;La stabilità del tratto fine-line dopo i mesi estivi era il mio dubbio principale. Il protocollo post-trattamento d'atelier ha garantito una guarigione scientifica eccellente. Oggi il tatuaggio è parte integrante della mia anatomia, notato solo da chi sa riconoscere la vera eleganza.&rdquo;
+                </div>
+                <div class="testimonial-author">Federica V. &mdash; Libera Professionista</div>
+            </div>
+        </div>
+
+        <div id="report-tecnico" class="lead-magnet">
+            <h3>Il Rigore del Tratto — Protocollo di Conservazione Molecolare</h3>
+            <div class="luxury-line center"></div>
+            <p>Scarica il report tecnico digitale d'atelier riservato ai fattori biologici e chimici che determinano la longevità, l'assenza di sbavature e la nitidezza di un tatuaggio fine-line negli anni.</p>
+            
+            <form action="#" method="POST" class="inline-form" onsubmit="alert('Protocollo tecnico inviato alla tua email d\'ufficio.'); return false;">
+                <input type="email" class="form-control" placeholder="Inserisci la tua email istituzionale" required>
                 <button type="submit" class="btn">ricevi il report</button>
             </form>
         </div>
 
-        <div id="prenota" class="booking-section">
+        <div id="valutazione-tecnica" class="booking-section">
             <div class="booking-layout">
                 <div class="booking-info">
-                    <h2 class="section-title" style="margin-bottom: 20px; text-align: center;">richiesta di accesso all'atelier</h2>
-                    <p>le sessioni private vengono calibrate sulle linee anatomiche individuali e confermate solo previa <span class="special-phrase">valutazione di fattibilità tecnica</span>. compila i dettagli per richiedere lo slot.</p>
+                    <h2 class="section-title" style="margin-bottom: 15px; text-align: center;">richiesta di valutazione della cute</h2>
+                    
+                    <div class="scarcity-notice">
+                        Capacità Operativa: Massimo 15 sessioni private al mese
+                    </div>
+                    
+                    <p>L'accesso all'atelier non è automatico. Ogni progetto viene confermato solo a seguito di una <span class="special-phrase">valutazione preventiva di fattibilità tecnica</span> per garantire che la tipologia di pelle supporti la stabilità chimica del micro-tratto.</p>
                 </div>
                 
-                <form action="#" method="POST" onsubmit="alert('richiesta inviata. verrai ricontattata privatamente entro 24 ore.'); return false;">
+                <form action="#" method="POST" onsubmit="alert('La richiesta tecnica è stata inoltrata. Riceverai l\'esito della valutazione d\'atelier entro 24 ore via WhatsApp/Email.'); return false;">
                     <div class="form-group">
-                        <label class="form-label">nome completo / alias</label>
-                        <input type="text" class="form-control" placeholder="es. elena..." required>
+                        <label class="form-label">Nome Completo o Riferimento Professionale</label>
+                        <input type="text" class="form-control" placeholder="es. Dott.ssa Beatrice R..." required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">contatto email o whatsapp</label>
-                        <input type="text" class="form-control" placeholder="es. nome@email.com o telefono" required>
+                        <label class="form-label">Contatto Diretto (WhatsApp o Email)</label>
+                        <input type="text" class="form-control" placeholder="Indica dove preferisci ricevere l'esito della valutazione" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">idea del progetto (posizionamento o ispirazione botanica)</label>
-                        <textarea class="form-control" rows="4" placeholder="descrivi brevemente la tua visione..." style="resize: none; font-family: 'Inter', sans-serif;"></textarea>
+                        <label class="form-label">Dettagli del Progetto (Idea concettuale e posizionamento anatomico)</label>
+                        <textarea class="form-control" rows="4" placeholder="Fornisci dettagli sullo stato della cute o sulla zona desiderata per lo screening preliminare del tratto..." style="resize: none; font-family: 'Inter', sans-serif;" required></textarea>
                     </div>
-                    <button type="submit" class="btn" style="margin-top: 10px; width: 100%;">invia richiesta privata</button>
+                    <button type="submit" class="btn" style="margin-top: 10px; width: 100%;">Invia i dati per lo screening tecnico</button>
                 </form>
             </div>
         </div>
@@ -488,20 +662,20 @@
         <div class="footer">
             <div class="contact-grid">
                 <div>
-                    <div class="contact-title">basicblonde studio</div>
+                    <div class="contact-title">basicblonde atelier</div>
                     <div class="contact-info">
-                        <p>brescia centro &mdash; solo su appuntamento privato</p>
-                        <p>disponibilità limitata per sessioni executive mensili</p>
+                        <p>Brescia Centro &mdash; Esclusivamente su appuntamento privato</p>
+                        <p>Protocollo igienico a ciclo chirurgico controllato elettronico</p>
                     </div>
                 </div>
                 <div style="text-align: right;" class="contact-info">
-                    <p style="margin-top: 40px;">email: info@basicblondetattoo.it</p>
+                    <p style="margin-top: 40px;">Contatti: info@basicblondetattoo.it</p>
                 </div>
             </div>
             
             <div class="external-links">
-                <a href="https://www.instagram.com/basicblonde.tattoo?igsh=MXE4dzZqdmpydDhycg==" target="_blank">instagram portfolio</a>
-                <a href="javascript:void(0);" onclick="openLegal()">note legali</a>
+                <a href="https://www.instagram.com/basicblonde.tattoo?igsh=MXE4dzZqdmpydDhycg==" target="_blank">instagram authority</a>
+                <a href="javascript:void(0);" onclick="openLegal()">privacy & gdpr compliance</a>
             </div>
         </div>
 
@@ -509,13 +683,12 @@
 
     <div id="legal-overlay" class="legal-overlay">
         <div class="legal-content">
-            <div class="btn-close-legal" onclick="closeLegal()">&larr; torna alla pagina principale</div>
+            <div class="btn-close-legal" onclick="closeLegal()">&larr; torna all'atelier</div>
             
-            <h2>note legali & privacy disclaimer</h2>
-            <p><strong>titolarità del sito:</strong> il presente sito web è gestito da basicblonde studio, con sede a brescia centro. i servizi offerti sono limitati a prestazioni di dermo-pigmentazione estetica ed artistica eseguite in regime di appuntamento privato ed esclusivo mono-cliente 1-to-1.</p>
-            <p><strong>proprietà intellettuale:</strong> tutti i contenuti testuali, l'architettura del codice, le grafiche e i marchi registrati o di fatto presenti su questo sito sono di proprietà exclusiva di basicblonde studio. è vietata qualsiasi riproduzione, anche parziale, senza esplicito consenso scritto.</p>
-            <p><strong>disclaimer tecnico-informativo:</strong> i contenuti del "report tecnico sulla guarigione molecolare del tratto fine-line" e le informazioni generali diffuse sul sito hanno carattere puramente informativo, artistico ed estetico. non costituiscono in alcun modo parere medico, dermatologico o sanitario. l'esecuzione di trattamenti di dermo-pigmentazione avviene nel totale rispetto dei protocolli igienico-sanitari vigenti, ma l'evoluzione biologica del pigmento nel tempo può variare in base al tipo di cute e ai fattori endogeni del soggetto.</p>
-            <p><strong>trattamento dati (gdpr):</strong> i dati personali raccolti tramite i moduli d'invio (nome, indirizzo email, recapito telefonico) sono trattati in piena conformità con il regolamento europeo gdpr. tali dati vengono utilizzati esclusivamente per l'invio della documentazione tecnica richiesta o per la gestione logistica della prenotazione della consulenza e non saranno in alcun caso ceduti, venduti o distribuiti a soggetti terzi.</p>
+            <h2>privacy policy & legal disclaimer</h2>
+            <p><strong>Gestione della piattaforma:</strong> Questo sito web è di proprietà di basicblonde studio, operante a Brescia Centro. Le prestazioni d'atelier avvengono solo ed esclusivamente in modalità mono-cliente a porte chiuse per garantire il rispetto dei massimi standard di salute, igiene e privacy previsti dalle normative regionali vigenti.</p>
+            <p><strong>Proprietà intellettuale:</strong> I testi, i nomi dei protocolli registrati di fatto (Healed Authority) e le metodologie di screening anatomico descritte costituiscono il patrimonio d'immagine del brand basicblonde. Qualsiasi plagio o riproduzione commerciale non autorizzata verrà perseguita a norma di legge.</p>
+            <p><strong>Trattamento dei dati sensibili (GDPR):</strong> I dati inseriti nei moduli per lo screening e per il download del report tecnico (nomi, indirizzi email, posizionamento anatomico richiesto) sono trattati con protocollo crittografato e in totale conformità con la normativa europea GDPR. Non verranno divulgati, rivenduti o ceduti a terze parti estranee all'elaborazione dell'appuntamento.</p>
         </div>
     </div>
 
